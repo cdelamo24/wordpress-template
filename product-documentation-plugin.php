@@ -21,3 +21,29 @@
  * Text Domain:       product-documentation-plugin
  * Domain Path:       /languages
  */
+
+if ( ! defined('WPINC') ) {
+    die;
+}
+
+define( 'PRODUCT_DOCUMENTATION_PLUGIN_VERSION', '1.0.0' );
+
+function activate_product_documentation_plugin() {
+    require_once plugin_dir_path( __PATH__ ) . 'includes/class-product-documentation-plugin-activator.php';
+    ProductDocumentationPluginActivator::activate();
+}
+function deactivate_product_documentation_plugin() {
+    require_once plugin_dir_path( __PATH__ ) . 'includes/class-product-documentation-plugin-deactivator.php';
+    ProductDocumentationPluginDeactivator::deactivate();
+}
+
+register_activation_hook( __FILE__, 'activate_product_documentation_plugin' );
+register_deactivation_hook( __FILE__, 'deactivate_product_documentation_plugin' );
+
+require plugin_dir_path( __FILE__ ) . 'includes/class-product-documentation-plugin.php';
+
+function run_product_documentation_plugin() {
+    $plugin = new Product_Documentation_Plugin();
+    $plugin->run();
+}
+run_product_documentation_plugin();
