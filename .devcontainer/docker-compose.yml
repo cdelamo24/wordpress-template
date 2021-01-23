@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   wordpress:
     build: ./
@@ -17,14 +17,14 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ../:/var/www/html/wp-content/plugins/plugin-dev:cached
- 
+
   db:
     image: mariadb:10
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wp_user
       MYSQL_PASSWORD: wp_pass
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
     ports:
       - 3306:3306
     volumes:

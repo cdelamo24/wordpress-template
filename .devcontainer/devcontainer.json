@@ -5,10 +5,35 @@
     "workspaceFolder": "/var/www/html",
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
-        "php.suggest.basic": false // avoids duplicate autocomplete
+        "php.suggest.basic": false,
+        "editor.quickSuggestions": {
+            "comments": true
+        },
+        "sqltools.connections": [
+            {
+                "name": "local",
+                "server": "db",
+                "database": "wordpress",
+                "username": "wp_user",
+                "password": "wp_pass",
+                "driver": "mariadb"
+            }
+        ]
     },
     "extensions": [
-        "bmewburn.vscode-intelephense-client"
-    ],
+		"bmewburn.vscode-intelephense-client",
+		"felixfbecker.php-debug",
+		"mtxr.sqltools",
+		"mtxr.sqltools-driver-mysql",
+		"patbenatar.advanced-new-file",
+		"karigari.chat",
+		"mhutchie.git-graph",
+		"codezombiech.gitignore",
+		"eamodio.gitlens",
+		"oderwat.indent-rainbow",
+		"ms-vsliveshare.vsliveshare",
+		"christian-kohler.path-intellisense",
+		"esbenp.prettier-vscode"
+	],
     "remoteUser": "vscode"
 }
